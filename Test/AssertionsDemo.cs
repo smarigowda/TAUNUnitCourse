@@ -40,8 +40,22 @@ namespace Tests
             Assert.AreEqual(obj1, obj2); // PASSes
         }
         [Test]
-        public void ConstraintModelDemo() {
+        public void ConstraintModelDemo()
+        {
             Assert.That(1, Is.EqualTo(1));
+            Assert.That("santosh", Is.Not.EqualTo("marigowda"));
+        }
+        [Test]
+        public void ContainsOneInstanceOfThree()
+        {
+            var arrayOfValues = new int[] { 1, 3, 5, 6,7};
+            Assert.That(arrayOfValues, Has.Exactly(1).EqualTo(3));
+            Assert.That(arrayOfValues, Has.One.EqualTo(6));
+        }
+        [Test]
+        public void IsMoreThan5AndLessThan50() {
+            var num = 45;
+            Assert.That(num, Is.GreaterThan(5).And.LessThan(100));
         }
     }
 }
