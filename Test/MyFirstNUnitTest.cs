@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 
 namespace Test
@@ -7,6 +8,7 @@ namespace Test
         [Test]
         public void IAmDoningGreat()
         {
+            Console.WriteLine("will see this in console");
             Assert.True(true);
         }
 
