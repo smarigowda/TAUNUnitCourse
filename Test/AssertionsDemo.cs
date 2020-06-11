@@ -34,8 +34,14 @@ namespace Tests
             var areTheyEqual = obj1.Equals(obj2); // reference equaliy, FAILs
             // Assert.IsTrue(areTheyEqual);
             // Assert.AreEqual(obj1, obj2); // reference equality, FAILs
+
+            Assert.AreSame(obj1, obj2); // reference equality, FAILs
             obj2 = obj1;
             Assert.AreEqual(obj1, obj2); // PASSes
+        }
+        [Test]
+        public void ConstraintModelDemo() {
+            Assert.That(1, Is.EqualTo(1));
         }
     }
 }
