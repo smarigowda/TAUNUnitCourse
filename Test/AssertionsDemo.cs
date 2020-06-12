@@ -57,5 +57,10 @@ namespace Tests
             var num = 45;
             Assert.That(num, Is.GreaterThan(5).And.LessThan(100));
         }
+        [Test]
+        public void UsingWarning() {
+            var isProcessed = false;
+            Warn.Unless(isProcessed, Is.True.After(1).Minutes.PollEvery(10).Seconds);
+        }
     }
 }
